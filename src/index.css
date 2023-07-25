@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply text-slate-700 border-slate-400;
+  }
+}
+
+@layer components {
+  button {
+    @apply px-3 py-1 border rounded-md;
+  }
+
+  table {
+    @apply w-full;
+  }
+
+  th,
+  td {
+    @apply border py-1 px-4;
+  }
+}
