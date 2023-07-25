@@ -1,12 +1,12 @@
-import { useState } from "react";
-
-interface ISaving {
-  date: string;
-  amount: number;
-}
+import { useQuery } from "react-query";
 
 function Savings() {
-  const [] = useState();
+  const { data } = useQuery<IResponse<ISaving[]>>("savings", async () => {
+    const res = await fetch("http://localhost:3000/api/v1/savings");
+    return res.json();
+  });
+
+  const savings: ISaving[] = data?.data || [];
 
   return (
     <div className="p-5">
@@ -22,18 +22,12 @@ function Savings() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="text-center">01-01-2023</td>
-            <td className="text-right">Rp100,000</td>
-          </tr>
-          <tr>
-            <td className="text-center">02-01-2023</td>
-            <td className="text-right">Rp25,000</td>
-          </tr>
-          <tr>
-            <td className="text-center font-bold">Total</td>
-            <td className="text-right font-bold">Rp125,000</td>
-          </tr>
+          {savings.map((row) => (
+            <tr key={`savings-${row.id}`}>
+              <td className="text-center">{row.date}</td>
+              <td className="text-right">Rp{row.amount}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
