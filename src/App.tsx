@@ -1,5 +1,14 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Savings from "./pages/Savings/Savings";
+
 function App() {
-  return <h1 className="text-blue-300 text-3xl font-bold">Hello world</h1>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Savings />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
