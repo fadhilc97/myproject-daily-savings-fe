@@ -2,15 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  * {
+@layer base {
+  /* * {
     @apply text-slate-700 border-slate-400;
+  } */
+  h1 {
+    @apply text-[2em];
   }
-} */
+
+  h2 {
+    @apply text-[1.5em];
+  }
+
+  h3 {
+    @apply text-[1.17em];
+  }
+
+  h4 {
+    @apply text-[1em];
+  }
+
+  h5 {
+    @apply text-[0.83em];
+  }
+
+  h6 {
+    @apply text-[0.67em];
+  }
+}
 
 @layer components {
+  input {
+    @apply border border-slate-400 px-2 py-1 rounded-md w-full;
+  }
+
   button {
-    @apply px-3 py-1 border rounded-md;
+    @apply px-3 py-1 border border-slate-400 rounded-md w-full;
   }
 
   table {
@@ -20,5 +47,17 @@
   th,
   td {
     @apply border py-1 px-4;
+  }
+
+  .btn-info {
+    @apply bg-sky-700 text-white border-0;
+  }
+
+  .btn-danger {
+    @apply bg-red-700 text-white border-0;
+  }
+
+  .btn-success {
+    @apply bg-green-700 text-white border-0;
   }
 }

@@ -1,11 +1,16 @@
+import { NavLink } from "react-router-dom";
 import SavingsRows from "./SavingsRows";
 
 function Savings() {
   return (
     <div className="p-5">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Hello world</h2>
-        <button type="button">Tambah Data</button>
+        <h3 className="font-bold">Daftar Tabungan</h3>
+        <NavLink to="/savings/create">
+          <button type="button" className="btn-success">
+            Tambah Data
+          </button>
+        </NavLink>
       </div>
       <table className="mt-5">
         <thead>
