@@ -3,3 +3,7 @@ interface ISaving {
   date: string;
   amount: number;
 }
+
+interface ISavingTotal {
+  total: number;
+}

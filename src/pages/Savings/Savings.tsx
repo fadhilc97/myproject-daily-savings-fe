@@ -1,12 +1,9 @@
-import { useQuery } from "react-query";
+import useSavings from "../../hooks/savings/useSavings";
+import useSavingsTotal from "../../hooks/savings/useSavingsTotal";
 
 function Savings() {
-  const { data } = useQuery<IResponse<ISaving[]>>("savings", async () => {
-    const res = await fetch("http://localhost:3000/api/v1/savings");
-    return res.json();
-  });
-
-  const savings: ISaving[] = data?.data || [];
+  const savings = useSavings();
+  const savingsTotal = useSavingsTotal();
 
   return (
     <div className="p-5">
@@ -22,12 +19,26 @@ function Savings() {
           </tr>
         </thead>
         <tbody>
-          {savings.map((row) => (
-            <tr key={`savings-${row.id}`}>
-              <td className="text-center">{row.date}</td>
-              <td className="text-right">Rp{row.amount}</td>
+          {savings.length > 0 ? (
+            <>
+              {savings.map((row) => (
+                <tr key={`savings-${row.id}`}>
+                  <td className="text-center">{row.date}</td>
+                  <td className="text-right">Rp{row.amount}</td>
+                </tr>
+              ))}
+              <tr>
+                <td className="text-center font-bold">Total</td>
+                <td className="text-right font-bold">Rp{savingsTotal}</td>
+              </tr>
+            </>
+          ) : (
+            <tr>
+              <td colSpan={2} className="text-center">
+                Data tidak ada
+              </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
