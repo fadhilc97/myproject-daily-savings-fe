@@ -7,3 +7,5 @@
   - Amount format in thousand separator (e.g. Rp100,000)
 - [ ] Create savings page
 - [ ] Savings page functionality
+- [ ] Consider parallel query between savings list and savings total
+- [ ] Format numbering, research language support features
