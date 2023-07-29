@@ -1,4 +1,4 @@
-## TODOS
+## Todos
 
 - [x] Savings index page
 - [x] Show savings from back-end
@@ -9,3 +9,4 @@
 - [ ] Savings page functionality
 - [ ] Consider parallel query between savings list and savings total
 - [ ] Format numbering, research language support features
+- [ ] Spinner/Loader component
