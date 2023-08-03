@@ -13,12 +13,14 @@ function SavingsForm() {
           <Form className="mt-5">
             <Input type="date" name="date" label="Tanggal" />
             <Input type="number" name="amount" label="Nominal (Rp)" />
-            <button type="submit" className="btn-info">
-              Simpan
-            </button>
-            <NavLink to="/">
-              <button className="mt-1 btn-danger">Kembali</button>
-            </NavLink>
+            <div className="flex gap-1">
+              <NavLink to="/" className="w-full">
+                <button className="btn-danger">Kembali</button>
+              </NavLink>
+              <button type="submit" className="btn-info">
+                Simpan
+              </button>
+            </div>
           </Form>
         )}
       </Formik>
