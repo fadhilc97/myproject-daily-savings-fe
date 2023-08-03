@@ -6,7 +6,7 @@
   - Date format in DD-MM-YYYY (e.g. 01-01-2023)
   - Amount format in thousand separator (e.g. Rp100,000.00)
 - [x] Create savings page
-- [ ] Savings page functionality
+- [ ] Create savings functionality
 - [ ] Consider parallel query between savings list and savings total
-- [ ] Format numbering, research language support features
 - [ ] Spinner/Loader component
+- [ ] Format numbering, research language support features
