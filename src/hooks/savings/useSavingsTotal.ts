@@ -9,7 +9,7 @@ function useSavingsTotal() {
     }
   );
 
-  return savingsTotalQuery.data?.data.total || 0;
+  return savingsTotalQuery.data?.data?.total || 0;
 }
 
 export default useSavingsTotal;
