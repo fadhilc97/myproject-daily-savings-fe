@@ -1,3 +1,5 @@
+import { Field } from "formik";
+
 type Props = {
   name: string;
   label?: string;
@@ -13,7 +15,11 @@ function Input({
       <label htmlFor={name} className="block">
         {label}
       </label>
-      <input name={name} className="mt-1" {...inputProps} />
+      {name ? (
+        <Field name={name} className="mt-1" {...inputProps} />
+      ) : (
+        <input className="mt-1" {...inputProps} />
+      )}
     </div>
   );
 }
