@@ -61,3 +61,9 @@
     @apply bg-green-700 text-white border-0;
   }
 }
+
+@layer utilities {
+  .text-danger {
+    @apply text-red-700;
+  }
+}
