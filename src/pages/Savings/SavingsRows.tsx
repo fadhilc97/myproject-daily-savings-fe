@@ -3,14 +3,14 @@ import SavingsRow from "./SavingsRow";
 import SavingsRowTotal from "./SavingsRowTotal";
 
 function SavingsRows() {
-  const savings = useSavings();
+  const { savings, savingsTotal } = useSavings();
 
   return savings.length > 0 ? (
     <>
       {savings.map((row) => (
         <SavingsRow key={row.id} date={row.date} amount={row.amount} />
       ))}
-      <SavingsRowTotal />
+      <SavingsRowTotal total={savingsTotal} />
     </>
   ) : (
     <tr>
