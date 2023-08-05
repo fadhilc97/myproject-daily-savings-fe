@@ -14,4 +14,8 @@
 
 ## Enhancements
 
-- [ ] Format numbering, research language support features
+- [ ] Login design
+- [ ] Registration design
+- [ ] Login functionality
+- [ ] Registration functionality
+- [ ] Format numbering, research language support features (if possible)
