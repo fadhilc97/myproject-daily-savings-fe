@@ -7,8 +7,8 @@
   - Amount format in thousand separator (e.g. Rp100,000.00)
 - [x] Create savings page
 - [x] Create savings functionality
-- [ ] Consider parallel query between savings list and savings total
-- [ ] Spinner/Loader component
+- [x] Consider parallel query between savings list and savings total
+- [x] Spinner/Loader component
 
 ## Enhancements
 
