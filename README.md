@@ -9,8 +9,8 @@
 - [x] Create savings functionality
 - [x] Consider parallel query between savings list and savings total
 - [x] Spinner/Loader component
-- [ ] Alert component
-- [ ] Implement alert component when savings success/fail to created
+- [x] Alert component
+- [x] Implement alert component when savings success/fail to created
 
 ## Enhancements
 
