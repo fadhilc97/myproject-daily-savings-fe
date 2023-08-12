@@ -4,10 +4,12 @@ import axios, { AxiosResponse } from "axios";
 import { useMutation } from "react-query";
 import { ISavingsSchema } from "../../@schemas/savings-schema";
 import { OverlayContext } from "../../contexts/OverlayProvider";
+import { AlertContext } from "../../contexts/AlertProvider";
 
 function useCreateSavings() {
   const navigate = useNavigate();
   const overlayContext = useContext(OverlayContext);
+  const alertContext = useContext(AlertContext);
 
   async function createSavings(
     payload: ISavingsSchema
@@ -18,10 +20,11 @@ function useCreateSavings() {
 
   const createSavingsMutation = useMutation(createSavings, {
     onMutate() {
-      overlayContext.showOverlay(true, "Creating savings data...");
+      overlayContext.showOverlay(true, "Memproses data...");
     },
     onSuccess(res) {
       overlayContext.showOverlay(false);
+      alertContext.showAlert("success", "Data berhasil ditambahkan");
       if (res.status === 201) {
         navigate("/");
       }
