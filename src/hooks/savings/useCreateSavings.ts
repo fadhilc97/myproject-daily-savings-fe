@@ -29,9 +29,9 @@ function useCreateSavings() {
         navigate("/");
       }
     },
-    onError(error) {
+    onError() {
       overlayContext.showOverlay(false);
-      console.log(error);
+      alertContext.showAlert("error", "Data gagal ditambahkan");
     },
   });
 
