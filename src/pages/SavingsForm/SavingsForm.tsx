@@ -26,7 +26,9 @@ function SavingsForm() {
             <Input type="number" name="amount" label="Nominal (Rp)" />
             <div className="flex gap-1">
               <NavLink to="/" className="w-full">
-                <button className="btn-danger">Kembali</button>
+                <button type="button" className="btn-danger">
+                  Kembali
+                </button>
               </NavLink>
               <button type="submit" className="btn-info">
                 Simpan
