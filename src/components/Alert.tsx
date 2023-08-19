@@ -45,9 +45,9 @@ function Alert({ isShow, type, message, onClose }: Props) {
   return (
     <div className={classes}>
       <p>{message}</p>
-      <p className="text-xl cursor-pointer" onClick={onClose}>
+      <button type="button" className="text-xl" onClick={onClose}>
         &times;
-      </p>
+      </button>
     </div>
   );
 }
