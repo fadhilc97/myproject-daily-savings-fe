@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import { ISavingsSchema, savingsSchema } from "../../@schemas/savings-schema";
 import useCreateSavings from "../../hooks/savings/useCreateSavings";
 import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 function SavingsForm() {
   const { mutate: createSavings } = useCreateSavings();
@@ -26,13 +27,13 @@ function SavingsForm() {
             <Input type="number" name="amount" label="Nominal (Rp)" />
             <div className="flex gap-1">
               <NavLink to="/" className="w-full">
-                <button type="button" className="btn-danger">
+                <Button type="button" variant="danger">
                   Kembali
-                </button>
+                </Button>
               </NavLink>
-              <button type="submit" className="btn-info">
+              <Button type="submit" variant="success">
                 Simpan
-              </button>
+              </Button>
             </div>
           </Form>
         )}
