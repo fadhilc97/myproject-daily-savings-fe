@@ -14,10 +14,12 @@ function Input({
   const fieldMeta = field[1];
 
   const errorClasses = "text-danger text-xs font-semibold";
-  const inputClasses = ["mt-1"];
+  const inputClasses = "border px-2 py-2 rounded-md w-full mt-1".split(" ");
 
   if (fieldMeta.error) {
     inputClasses.push("border-red-500", "focus:outline-none");
+  } else {
+    inputClasses.push("border-slate-400");
   }
 
   return (
