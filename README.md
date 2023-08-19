@@ -21,4 +21,7 @@
 - [ ] Registration design
 - [ ] Login functionality
 - [ ] Registration functionality
+- [ ] When create savings, should also show the following informations:
+  - Total savings for selected date
+  - Last 5 create savings for selected date
 - [ ] Format numbering, research language support features (if possible)
