@@ -8,7 +8,7 @@ function SavingsRows() {
   return savings.length > 0 ? (
     <>
       {savings.map((row) => (
-        <SavingsRow key={row.id} date={row.date} amount={row.amount} />
+        <SavingsRow key={row.date} date={row.date} amount={row.amount} />
       ))}
       <SavingsRowTotal total={savingsTotal} />
     </>
