@@ -12,6 +12,8 @@
 - [x] Alert component
 - [x] Implement alert component when savings success/fail to created
 - [x] Input field when invalid, apply border style with red color
+- [x] Create own button component and use it
+- [x] Refactor under index.css
 
 ## Enhancements
 
