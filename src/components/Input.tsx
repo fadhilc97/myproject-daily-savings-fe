@@ -30,6 +30,7 @@ function Input({
       {name ? (
         <>
           <Field
+            id={name}
             name={name}
             className={inputClasses.join(" ")}
             {...inputProps}
