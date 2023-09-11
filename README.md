@@ -1,5 +1,7 @@
 ## Todos
 
+### Functionalities
+
 - [x] Savings index page
 - [x] Show savings from back-end
 - [x] Savings table data formatting
@@ -15,12 +17,18 @@
 - [x] Create own button component and use it
 - [x] Refactor under index.css
 
+### Refactoring
+
+- [ ] Create hook to abstract mutation
+- [ ] Create .env that contains API URL
+- [ ] Create axios configuration
+
 ## Enhancements
 
-- [ ] Login design
-- [ ] Registration design
+- [x] Login design
+- [x] Registration design
 - [ ] Login functionality
-- [ ] Registration functionality
+- [x] Registration functionality
 - [ ] When create savings, should also show the following informations:
   - Total savings for selected date
   - Last 5 create savings for selected date
