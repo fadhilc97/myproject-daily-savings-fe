@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { IRegisterSchema } from "../../@schemas/register-schema";
 import { AlertContext } from "../../contexts/AlertProvider";
 import { OverlayContext } from "../../contexts/OverlayProvider";
+import axios from "../../@config/axios";
 
 const useRegister = () => {
   const navigate = useNavigate();
@@ -14,10 +15,7 @@ const useRegister = () => {
   function register(
     payload: IRegisterSchema
   ): Promise<AxiosResponse<IResponse>> {
-    const res = axios.post(
-      "http://localhost:3000/api/v1/auth/register",
-      payload
-    );
+    const res = axios.post("/api/v1/auth/register", payload);
     return res;
   }
 
@@ -30,7 +28,7 @@ const useRegister = () => {
       overlayContext.showOverlay(false);
       alertContext.showAlert(
         "success",
-        "Akun berhasil didaftarkan. Silahkan login kembali"
+        "Akun berhasil didaftarkan. Silahkan login"
       );
       navigate("/login");
     },

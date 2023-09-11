@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { useMutation } from "react-query";
 import { ISavingsSchema } from "../../@schemas/savings-schema";
 import { OverlayContext } from "../../contexts/OverlayProvider";
 import { AlertContext } from "../../contexts/AlertProvider";
+import axios from "../../@config/axios";
 
 function useCreateSavings() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function useCreateSavings() {
   async function createSavings(
     payload: ISavingsSchema
   ): Promise<AxiosResponse<IResponse>> {
-    const res = axios.post("http://localhost:3000/api/v1/savings", payload);
+    const res = axios.post("/api/v1/savings", payload);
     return res;
   }
 
