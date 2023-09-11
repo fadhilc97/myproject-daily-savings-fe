@@ -19,9 +19,9 @@
 
 ### Refactoring
 
-- [ ] Create hook to abstract mutation
-- [ ] Create .env that contains API URL
-- [ ] Create axios configuration
+- [x] Create hook to abstract mutation
+- [x] Create .env that contains API URL
+- [x] Create axios configuration
 
 ## Enhancements
 
