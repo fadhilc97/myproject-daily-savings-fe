@@ -16,7 +16,7 @@ function Input({
   const errorClasses = "text-danger text-xs font-semibold";
   const inputClasses = "border px-2 py-2 rounded-md w-full mt-1".split(" ");
 
-  if (fieldMeta.error) {
+  if (fieldMeta.touched && fieldMeta.error) {
     inputClasses.push("border-red-500", "focus:outline-none");
   } else {
     inputClasses.push("border-slate-400");
@@ -35,7 +35,9 @@ function Input({
             className={inputClasses.join(" ")}
             {...inputProps}
           />
-          <p className={errorClasses}>{fieldMeta.error}</p>
+          {fieldMeta.touched && (
+            <p className={errorClasses}>{fieldMeta.error}</p>
+          )}
         </>
       ) : (
         <input className={inputClasses.join("")} {...inputProps} />
