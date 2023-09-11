@@ -22,12 +22,10 @@ function useCreateSavings() {
     onMutate() {
       overlayContext.showOverlay(true, "Memproses data...");
     },
-    onSuccess(res) {
+    onSuccess() {
       overlayContext.showOverlay(false);
       alertContext.showAlert("success", "Data berhasil ditambahkan");
-      if (res.status === 201) {
-        navigate("/");
-      }
+      navigate("/");
     },
     onError() {
       overlayContext.showOverlay(false);
