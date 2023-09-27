@@ -1,0 +1,3 @@
+interface ILoginResult {
+  accessToken: string;
+}
