@@ -14,6 +14,7 @@ type Props = {
     onSuccess: string;
     onError: string;
   };
+  // TODO: need create custom callback onMutate, onSuccess, onError
 };
 
 const useCustomMutation = <P = unknown, R = IResponse>({

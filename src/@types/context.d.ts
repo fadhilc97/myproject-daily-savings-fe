@@ -6,3 +6,8 @@ interface IOverlayContext {
 interface IAlertContext {
   showAlert: (type: AlertType, message: string) => void;
 }
+
+interface IAuthContext {
+  auth: IAuth;
+  setAuth: (auth: IAuth) => void;
+}

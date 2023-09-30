@@ -1,3 +1,3 @@
-interface ILoginResult {
+interface IAuth {
   accessToken: string;
 }

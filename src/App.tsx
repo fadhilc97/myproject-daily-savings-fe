@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthRoute from "./routes/AuthRoute";
 import Savings from "./pages/Savings/Savings";
 import SavingsForm from "./pages/SavingsForm/SavingsForm";
 import Login from "./pages/Auth/Login";
@@ -10,8 +11,10 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Savings />} />
-        <Route path="/savings/create" element={<SavingsForm />} />
+        <Route element={<AuthRoute />}>
+          <Route path="/" element={<Savings />} />
+          <Route path="/savings/create" element={<SavingsForm />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

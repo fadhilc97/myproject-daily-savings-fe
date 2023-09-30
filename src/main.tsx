@@ -6,6 +6,7 @@ import App from "./App.tsx";
 import "./index.css";
 import OverlayProvider from "./contexts/OverlayProvider.tsx";
 import AlertProvider from "./contexts/AlertProvider.tsx";
+import AuthProvider from "./contexts/AuthProvider.tsx";
 
 const queryClient = new QueryClient();
 
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ReactQueryDevtools />
       <OverlayProvider>
         <AlertProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </AlertProvider>
       </OverlayProvider>
     </QueryClientProvider>
