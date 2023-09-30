@@ -10,7 +10,7 @@ const useRegister = () => {
     messages: {
       onMutate: "Memproses login...",
       onSuccess: "Login berhasil",
-      onError: "Login gagal",
+      onError: "Login gagal. Silahkan coba kembali",
     },
   });
 
