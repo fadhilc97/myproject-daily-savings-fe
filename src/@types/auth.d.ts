@@ -1,3 +1,3 @@
 interface IAuth {
-  accessToken: string;
+  accessToken?: string;
 }

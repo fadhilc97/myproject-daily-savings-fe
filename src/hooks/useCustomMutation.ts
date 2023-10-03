@@ -6,7 +6,7 @@ import { AlertContext } from "../contexts/AlertProvider";
 import { OverlayContext } from "../contexts/OverlayProvider";
 import axios from "../@config/axios";
 
-type Props = {
+type Options = {
   method: "POST" | "PUT";
   url: string;
   messages: {
@@ -21,7 +21,7 @@ const useCustomMutation = <P = unknown, R = IResponse>({
   method,
   url,
   messages,
-}: Props) => {
+}: Options) => {
   const navigate = useNavigate();
   const overlayContext = useContext(OverlayContext);
   const alertContext = useContext(AlertContext);

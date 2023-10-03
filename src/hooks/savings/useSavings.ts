@@ -1,14 +1,20 @@
 import { useQueries } from "react-query";
+import useAxiosPrivate from "../useAxiosPrivate";
+import { AxiosResponse } from "axios";
 
 function useSavings() {
-  async function getSavings(): Promise<IResponse<ISaving[]>> {
-    const res = await fetch("http://localhost:3000/api/v1/savings");
-    return res.json();
+  const axiosPrivate = useAxiosPrivate();
+
+  async function getSavings(): Promise<AxiosResponse<IResponse<ISaving[]>>> {
+    const res = await axiosPrivate.get("/api/v1/savings");
+    return res;
   }
 
-  async function getSavingsTotal(): Promise<IResponse<ISavingTotal>> {
-    const res = await fetch("http://localhost:3000/api/v1/savings/total");
-    return res.json();
+  async function getSavingsTotal(): Promise<
+    AxiosResponse<IResponse<ISavingTotal>>
+  > {
+    const res = await axiosPrivate.get("/api/v1/savings/total");
+    return res;
   }
 
   const savingsQueries = useQueries([
@@ -20,8 +26,8 @@ function useSavings() {
   const savingsTotalQuery = savingsQueries[1];
 
   return {
-    savings: savingsQuery.data?.data || [],
-    savingsTotal: savingsTotalQuery.data?.data?.total || 0,
+    savings: savingsQuery.data?.data.data || [],
+    savingsTotal: savingsTotalQuery.data?.data?.data?.total || 0,
   };
 }
 

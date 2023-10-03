@@ -21,7 +21,7 @@ const useRegister = () => {
 
   if (loginMutation.isSuccess) {
     authContext.setAuth({
-      accessToken: loginMutation.data?.data.data?.accessToken || "",
+      accessToken: loginMutation.data?.data.data?.accessToken,
     });
     navigate("/");
   }
