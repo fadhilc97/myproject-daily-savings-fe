@@ -1,31 +1,25 @@
 import { useContext } from "react";
-import { useQuery } from "react-query";
 import axios from "../../@config/axios";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { AxiosResponse } from "axios";
 
 const useRefreshToken = () => {
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
 
-  async function refresh(): Promise<AxiosResponse<IResponse<IAuth>>> {
-    const response = await axios.get("/api/v1/auth/refresh", {
-      withCredentials: true,
-    });
-    return response;
+  async function refresh() {
+    const response: AxiosResponse<IResponse<IAuth>> = await axios.get(
+      "/api/v1/auth/refresh",
+      {
+        withCredentials: true,
+      }
+    );
+    const accessToken = response.data.data?.accessToken;
+
+    setAuth({ ...auth, accessToken });
+    return accessToken;
   }
 
-  const queryResult = useQuery({
-    queryFn: refresh,
-    queryKey: ["refresh"],
-  });
-
-  const accessToken = queryResult.data?.data.data?.accessToken;
-
-  if (queryResult.isSuccess) {
-    setAuth({ accessToken });
-  }
-
-  return accessToken;
+  return refresh;
 };
 
 export default useRefreshToken;
