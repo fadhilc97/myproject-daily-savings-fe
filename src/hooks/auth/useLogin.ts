@@ -17,6 +17,9 @@ const useRegister = () => {
       onSuccess: "Login berhasil",
       onError: "Login gagal. Silahkan coba kembali",
     },
+    axiosRequestConfig: {
+      withCredentials: true,
+    },
   });
 
   if (loginMutation.isSuccess) {
