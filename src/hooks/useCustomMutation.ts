@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { AxiosResponse } from "axios";
+import { AxiosRequestConfig, AxiosResponse } from "axios";
 import { AlertContext } from "../contexts/AlertProvider";
 import { OverlayContext } from "../contexts/OverlayProvider";
 import axios from "../@config/axios";
@@ -14,6 +14,7 @@ type Options = {
     onSuccess: string;
     onError: string;
   };
+  axiosRequestConfig?: AxiosRequestConfig;
   // TODO: need create custom callback onMutate, onSuccess, onError
 };
 
@@ -21,6 +22,7 @@ const useCustomMutation = <P = unknown, R = IResponse>({
   method,
   url,
   messages,
+  axiosRequestConfig,
 }: Options) => {
   const navigate = useNavigate();
   const overlayContext = useContext(OverlayContext);
@@ -31,6 +33,7 @@ const useCustomMutation = <P = unknown, R = IResponse>({
       method,
       url,
       data: payload,
+      ...axiosRequestConfig,
     });
     return res;
   }
