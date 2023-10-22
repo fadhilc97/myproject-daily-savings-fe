@@ -27,8 +27,9 @@
 
 - [x] Login design
 - [x] Registration design
-- [ ] Login functionality
+- [x] Login functionality
 - [x] Registration functionality
+- [ ] Persistance login
 - [ ] When create savings, should also show the following informations:
   - Total savings for selected date
   - Last 5 create savings for selected date
