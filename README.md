@@ -25,12 +25,14 @@
 
 ## Enhancements
 
-- [x] Login design
-- [x] Registration design
-- [x] Login functionality
-- [x] Registration functionality
-- [ ] Persistance login
-- [ ] When create savings, should also show the following informations:
+- [x] Login design (functional)
+- [x] Registration design (UI)
+- [x] Login functionality (functional)
+- [x] Registration functionality (functional)
+- [x] Persistance login (functional)
+- [ ] Hamburger menu (UI)
+- [ ] Logout function (functional)
+- [ ] When create savings, should also show the following informations: (functional)
   - Total savings for selected date
   - Last 5 create savings for selected date
-- [ ] Format numbering, research language support features (if possible)
+- [ ] Format numbering, research language support features (if possible) (UI)
