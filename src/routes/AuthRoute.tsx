@@ -3,9 +3,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 
 function AuthRoute() {
-  const authContext = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
 
-  return authContext.auth.accessToken ? <Outlet /> : <Navigate to="/login" />;
+  return auth.accessToken ? <Outlet /> : <Navigate to="/login" />;
 }
 
 export default AuthRoute;
