@@ -5,6 +5,7 @@ import SavingsForm from "./pages/SavingsForm/SavingsForm";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import PersistLoginRoute from "./routes/PersistLoginRoute";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route element={<PersistLoginRoute />}>
           <Route element={<AuthRoute />}>
-            <Route path="/" element={<Savings />} />
-            <Route path="/savings/create" element={<SavingsForm />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Savings />} />
+              <Route path="/savings/create" element={<SavingsForm />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
