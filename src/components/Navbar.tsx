@@ -1,8 +1,14 @@
 import { useState } from "react";
 import Hamburger from "./Hamburger";
+import useLogout from "../hooks/auth/useLogout";
 
 function Navbar() {
   const [isOpenNavMenu, setIsOpenNavMenu] = useState<boolean>(false);
+  const { mutate } = useLogout();
+
+  function handleLogout() {
+    mutate();
+  }
 
   return (
     <nav className="bg-teal-700 fixed w-full">
@@ -13,7 +19,10 @@ function Navbar() {
       {isOpenNavMenu && (
         <ul className="divide-y divide-white border-y border-white">
           <li>
-            <button className="py-2 text-white text-center w-full hover:bg-teal-600">
+            <button
+              onClick={handleLogout}
+              className="py-2 text-white text-center w-full hover:bg-teal-600"
+            >
               Logout
             </button>
           </li>
